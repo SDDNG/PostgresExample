@@ -42,4 +42,3 @@ connection.close()
 for result in results:
     print(result)
 
-
