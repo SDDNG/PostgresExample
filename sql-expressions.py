@@ -1,3 +1,7 @@
+# This program demonstrates the expression layer, the middle layer of SQLAlchemy's abstraction levels, the lowest layer is basic
+# SQL commands similar to CLI or psycopg2, this layer is a bit more abstract and the top layer is the most abstract (furthest
+# from the Command line)
+
 from sqlalchemy import (
     create_engine, Table, Column, Float, ForeignKey, Integer, String, MetaData 
 )
@@ -46,7 +50,7 @@ with db.connect() as connection:
     # select_query = artist_table.select()
 
     # Query 2: select name only from the artists table
-    # select_query = artist_table.select().with_only_columns([artist_table.c.Name])
+    select_query = artist_table.select().with_only_columns([artist_table.c.Name])
 
     # Query 3: select only "Queen"  from the artists table
     # select_query = artist_table.select().where(artist_table.c.Name == "Queen")
@@ -58,7 +62,7 @@ with db.connect() as connection:
     # select_query = album_table.select().where(album_table.c.ArtistId == 51)
 
     # Query 6: select only "Queen" tracks from the tracks table
-    select_query = track_table.select().where(track_table.c.Composer == "Queen")
+    # select_query = track_table.select().where(track_table.c.Composer == "Queen")
 
 
 
